@@ -23,7 +23,8 @@ default: &default
 
 development:
   <<: *default
-  database: Everest_development
+  database: <%= ENV['DATABASE_NAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
