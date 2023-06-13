@@ -32,3 +32,5 @@
 
 #database credentials
 .env
+
+/node_modules
