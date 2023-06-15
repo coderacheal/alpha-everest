@@ -1,6 +1,15 @@
 <h2>Expenses</h2>
 
 
+
+<% @expenses.each do |expense| %>
+  <div>
+    <p>Name: <%= expense.name %></p>
+    <p>Amount: <%= expense.amount %></p>
+    <p>Author ID: <%= expense.author_id %></p>
+  </div>
+<% end %>
+
 <%= button_to 'Add expense', new_user_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get %>
 
 

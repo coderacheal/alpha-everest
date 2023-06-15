@@ -1,28 +1,35 @@
 class ExpensesController < ApplicationController
+
+    before_action :set_category, only: [:index, :new, :create]
+
     def index
-      @category = Category.find(params[:category_id])
       @expenses = @category.expenses
     end
 
     def new
-        @category = Category.find(params[:category_id])
-        @expense = Expense.new
+      @expense = Expense.new
     end
 
     def create
-        @category = Category.find(params[:category_id])
-        @expense = @category.expenses.build(expense_params)
-        if @expense.save
-            redirect_to user_category_expenses_path
-        else
-            render :new
-        end
+      @expense = @category.expenses.build(expense_params)
+      @expense.save
+      if @expense.save
+        @category.expenses << @expense
+
+        redirect_to user_category_expenses_path
+      else
+          render :new
+      end
+    end
+
+    def set_category
+      @category = Category.find(params[:category_id])
     end
 
     private
 
     def expense_params
-        params.require(:expense).permit(:name, :amount).merge(author_id: current_user.id)
+      params.require(:expense).permit(:name, :amount).merge(author_id: current_user.id)
     end
   end
   
