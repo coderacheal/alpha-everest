@@ -1,0 +1,10 @@
+<h1>ADD Category</h1>
+<%= form_with model: @category, url: user_categories_path(user_id: current_user.id), method: :post do |form| %>
+  <div class="add-form">
+    <div>
+      <%= form.text_field :name, class: 'name-input', placeholder: 'Name'%><br>
+    </div>
+    <br>
+    <%= form.submit 'Submit', class: 'post-button' %>   
+  </div>
+<% end %>
