@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :users do
-    resources :categories 
-    resources :expenses 
+    resources :categories do
+      resources :expenses
+    end 
   end
 
   root "users#index"
