@@ -1,10 +1,17 @@
 <h1>ADD Category</h1>
-<%= form_with model: @category, url: user_categories_path(user_id: current_user.id), method: :post do |form| %>
+<h1>ADD Category</h1>
+<%= form_with model: @category, url: user_categories_path(current_user), method: :post, local: true do |form| %>
   <div class="add-form">
     <div>
-      <%= form.text_field :name, class: 'name-input', placeholder: 'Name'%><br>
+      <%= form.label :name %><br>
+      <%= form.text_field :name, class: 'name-input' %><br>
+    </div>
+    <div>
+      <%= form.label :image %><br>
+      <%= form.file_field :image, class: 'image-input' %><br>
     </div>
     <br>
-    <%= form.submit 'Submit', class: 'post-button' %>   
+    <%= form.submit 'Submit', class: 'post-button' %>
   </div>
 <% end %>
+
