@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
-
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Root route
+  root "users#welcome_page"
 
   resources :users do
     resources :categories do
       resources :expenses
-    end 
+    end
   end
 
-  root "users#index"
-
+  # Catch-all route for handling invalid URLs
+  match "*path", to: "application#handle_routing_error", via: :all
 end
