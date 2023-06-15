@@ -1,1 +1,10 @@
-hello
+<h1>All Categories</h1>
+
+<ul>
+  <% @all_categories.each do |category| %>
+    <li>
+      <%= category.name %>
+      <%= image_tag category.image if category.image.attached? %>
+    </li>
+  <% end %>
+</ul>
