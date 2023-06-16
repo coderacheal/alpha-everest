@@ -50,7 +50,6 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-<<<<<<< HEAD
 # store icons
 gem 'activestorage'
 
@@ -64,8 +63,6 @@ gem 'devise'
 # environment variables
 gem 'dotenv-rails', groups: %i[development test]
 
-=======
->>>>>>> 34decbd856036949981fb5a66e9e33c6050db301
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
