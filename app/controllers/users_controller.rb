@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   enum role: { admin: 'admin' }
 
-
   before_action :authenticate_user!
 
   # def index
