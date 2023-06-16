@@ -51,6 +51,9 @@ gem 'bootsnap', require: false
 # store icons
 gem 'activestorage'
 
+# authorization
+gem 'cancancan'
+
 # authentication
 gem 'devise'
 

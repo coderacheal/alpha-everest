@@ -23,9 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: Everest_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,8 +58,6 @@ development:
 test:
   <<: *default
   database: Everest_test
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -87,4 +83,4 @@ production:
   <<: *default
   database: Everest_production
   username: Everest
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+  password: <%= ENV["EVEREST_DATABASE_PASSWORD"] %>
