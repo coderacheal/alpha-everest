@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   #   redirect_to user_categories_path(user_id: current_user.id)
   # end
 
+  enum role: { admin: 'admin' }
+
 
   before_action :authenticate_user!
 

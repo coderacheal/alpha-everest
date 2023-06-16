@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
   # resources :expenses
   devise_for :users
-  
 
   root 'home#index'
 end
