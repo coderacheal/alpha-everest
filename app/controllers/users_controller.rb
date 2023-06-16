@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     redirect_to user_categories_path(user_id: current_user.id)
   end
 
-
   before_action :authenticate_user!
 
   def index
