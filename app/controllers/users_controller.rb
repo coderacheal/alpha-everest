@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-
-  def welcome_page
+  
+  def welcome
+    puts "User signed in: #{user_signed_in?}"
     return unless user_signed_in?
-
-    redirect_to user_categories_url(user_id: current_user.id)
+  
+    redirect_to user_categories_path(user_id: current_user.id)
   end
+  
+  
+  before_action :authenticate_user!
 
   def index
     @all_categories = Category.all
