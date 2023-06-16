@@ -15,6 +15,16 @@ class ApplicationController < ActionController::Base
   # def after_sign_out_path_for(resource_or_scope)
   #   splash_screen_path
   # end
+
+  # def after_sign_in_path_for(resource)
+  #   categories_path
+  # end
+
+  # def after_sign_in_path_for(resource)
+  #   user_categories_path(current_user)
+  # end
+  
+
 end
 
 # class ApplicationController < ActionController::Base

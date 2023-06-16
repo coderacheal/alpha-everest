@@ -11,5 +11,5 @@
 
 </ul>
 <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "sign-out"%>
-<%= button_to 'create a new category', new_user_category_path(user_id: current_user.id), method: :get %>
-<%= button_to 'create a new transaction', new_user_category_path(user_id: current_user.id), method: :get %>
+<%= button_to 'create a new category', new_category_path, method: :get %>
+<%# <%= button_to 'create a new transaction', new_user_category_path(user_id: current_user.id), method: :get %> %>
