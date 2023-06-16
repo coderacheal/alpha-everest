@@ -1,7 +1,7 @@
 <h1>ADD Category</h1>
 <h1>ADD Category</h1>
 <%= link_to 'Back', root_path%>
-<%= form_with model: @category, url: user_categories_path(current_user), method: :post, local: true do |form| %>
+<%= form_with model: @category, url: categories_path(current_user.id), method: :post, local: true do |form| %>
   <div class="add-form">
     <div>
       <%= form.label :name %><br>

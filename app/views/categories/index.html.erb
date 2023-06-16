@@ -4,7 +4,7 @@
 <ul>
 
 <% @category_total_amounts.each do |category, total_amount| %>
-  <p><%= link_to category.name, user_category_expenses_path(user_id: current_user.id, category_id: category.id) %> </p>
+  <p><%= link_to category.name, category_expenses_path(category_id: category.id) %> </p>
     <%= image_tag category.image, class: 'category-image' if category.image.attached? %>
     <p>Total Amount: <%= total_amount %></p>
 <% end %>
