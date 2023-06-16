@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   def index
     @all_categories = current_user.categories
     @category_total_amounts = {}
