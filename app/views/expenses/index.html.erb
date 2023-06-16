@@ -1,6 +1,6 @@
 <h2>Expenses</h2>
 
-<%= link_to 'Back', root_path%>
+<%= link_to 'Back', categories_path%>
 
 <p>Total Amount<%= @total_amount %> </p>
 
@@ -14,6 +14,6 @@
 
 
 
-<%= button_to 'Add expense', new_user_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get %>
+<%= button_to 'Add expense', new_category_expense_path(user_id: current_user.id, category_id: @category.id), method: :get %>
 
 

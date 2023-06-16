@@ -16,7 +16,7 @@ class ExpensesController < ApplicationController
     if @expense.save
       @category.expenses << @expense
 
-      redirect_to user_category_expenses_path
+      redirect_to category_expenses_path
     else
       render :new
     end
