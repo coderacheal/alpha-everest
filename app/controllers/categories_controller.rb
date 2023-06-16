@@ -1,10 +1,6 @@
 class CategoriesController < ApplicationController
-  # def index
-  #     @all_categories = Category.all
-  # end
-
   def index
-    @all_categories = Category.all
+    @all_categories = current_user.categories
     @category_total_amounts = {}
 
     @all_categories.each do |category|
@@ -26,6 +22,11 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to categories_path
+  end
 
   private
 

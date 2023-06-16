@@ -1,5 +1,4 @@
 <h1>All Categories</h1>
-<%= link_to 'Back', root_path%>
 
 <ul>
 
@@ -7,9 +6,10 @@
   <p><%= link_to category.name, category_expenses_path(category_id: category.id) %> </p>
     <%= image_tag category.image, class: 'category-image' if category.image.attached? %>
     <p>Total Amount: <%= total_amount %></p>
+    <%= button_to 'Delete', category_path(category), method: :delete, class: 'ingredient-delete-btn' %>
+
 <% end %>
 
 </ul>
 <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "sign-out"%>
 <%= button_to 'create a new category', new_category_path, method: :get %>
-<%# <%= button_to 'create a new transaction', new_user_category_path(user_id: current_user.id), method: :get %> %>
